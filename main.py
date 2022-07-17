@@ -29,7 +29,7 @@ class model_input(BaseModel):
     OldPeak:float
     STSlope:int
     MajorVessels:int
-    Thal:int
+    AverageHeartRate:int
 
 heart_model = pickle.load(open('heart_model.sav','rb'))
 
@@ -50,9 +50,9 @@ def heart_pred(input_parameters : model_input):
     peak=input_dictionary['OldPeak']
     slope=input_dictionary['STSlope']
     vessels=input_dictionary['MajorVessels']
-    thal=input_dictionary['Thal']
+    a_rate=input_dictionary['AverageHeartRate']
 
-    input_list = [age, sex, chest, bp, chol, fbs, ecg, rate, angina, peak, slope, vessels, thal]
+    input_list = [age, sex, chest, bp, chol, fbs, ecg, rate, angina, peak, slope, vessels, a_rate]
     prediction= heart_model.predict([input_list])
 
     if prediction[0]==0:
