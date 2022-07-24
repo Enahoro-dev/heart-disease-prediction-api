@@ -1,6 +1,6 @@
 ## Basic Implementation 
 
-```
+``` javascript
 import json
 import requests
 
