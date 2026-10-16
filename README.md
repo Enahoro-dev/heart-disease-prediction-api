@@ -1,4 +1,4 @@
-## Basic Python Implementation 
+## Basic Python Implementation of the model
 
 ``` python
 import json
